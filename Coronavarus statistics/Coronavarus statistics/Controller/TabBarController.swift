@@ -23,14 +23,13 @@ class TabBarController: UITabBarController {
     
     func configureNavBar() {
         UINavigationBar.appearance().barTintColor = .black
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().isTranslucent = true
         UINavigationBar.appearance().prefersLargeTitles = true
         UINavigationBar.appearance().barStyle = .default
         UINavigationBar.appearance().tintColor = .black
-        
     }
     
     func configureTabBar() {

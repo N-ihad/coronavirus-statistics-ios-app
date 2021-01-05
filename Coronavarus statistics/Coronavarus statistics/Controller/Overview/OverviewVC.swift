@@ -109,10 +109,13 @@ class OverviewVC: UIViewController {
     
     func fetchOverviewData() {
         startLoadingAnimation()
-        NetworkService.shared.getOverviewStatistics { response in
+        NetworkService.shared.getOverviewStatistics { [weak self] response in
             guard let res = response.value else { return }
-            self.overviewData = res.global
-            self.stopLoadingAnimation()
+            self?.overviewData = res.global
+            
+            DispatchQueue.main.async {
+                self?.stopLoadingAnimation()
+            }
         }
     }
     

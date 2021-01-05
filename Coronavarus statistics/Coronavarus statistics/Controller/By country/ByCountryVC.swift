@@ -42,12 +42,14 @@ class ByCountryVC: UIViewController {
     // MARK: - Helpers
     func fetchCountriesData() {
         startLoadingAnimation()
-        NetworkService.shared.getOverviewStatistics { response in
+        NetworkService.shared.getOverviewStatistics { [weak self] response in
             guard let res = response.value else { return }
-            self.countries = res.countries
-            self.configureSections()
-            self.tableView.reloadData()
-            self.stopLoadingAnimation()
+            self?.countries = res.countries
+            self?.configureSections()
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.stopLoadingAnimation()
+            }
         }
     }
     
