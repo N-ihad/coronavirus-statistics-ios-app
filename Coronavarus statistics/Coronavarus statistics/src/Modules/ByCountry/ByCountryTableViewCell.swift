@@ -1,5 +1,5 @@
 //
-//  CountryTableView.swift
+//  ByCountryTableViewCell.swift
 //  Coronavarus statistics
 //
 //  Created by Nihad on 1/1/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CountryTableView: UITableViewCell {
+final class ByCountryTableViewCell: UITableViewCell {
 
     private let nameLabel: UILabel = {
         let nameLabel = UILabel()

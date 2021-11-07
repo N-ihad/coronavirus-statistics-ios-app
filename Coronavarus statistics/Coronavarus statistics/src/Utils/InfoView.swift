@@ -25,7 +25,6 @@ final class InfoView: UIView {
 
     init(frame: CGRect = .zero, title: String) {
         super.init(frame: frame)
-
         setup(withTitle: title)
         layout()
     }

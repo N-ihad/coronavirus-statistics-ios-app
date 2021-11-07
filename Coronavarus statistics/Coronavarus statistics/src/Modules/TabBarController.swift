@@ -17,17 +17,17 @@ final class TabBarController: UITabBarController {
     }
 
     private func setup() {
-        let overviewNavigationController = UINavigationController(rootViewController: OverviewVC())
-        overviewNavigationController.title = "Overview"
-        overviewNavigationController.tabBarItem.image = UIImage(systemName: "list.bullet.rectangle")
-        overviewNavigationController.navigationBar.barTintColor = .white
+        let summaryNavigationController = UINavigationController(rootViewController: SummaryViewController())
+        summaryNavigationController.title = "Summary"
+        summaryNavigationController.tabBarItem.image = .summaryTabBarIcon
+        summaryNavigationController.navigationBar.barTintColor = .white
         
-        let byCountryNavigationController = UINavigationController(rootViewController: ByCountryVC())
+        let byCountryNavigationController = UINavigationController(rootViewController: ByCountryViewController())
         byCountryNavigationController.title = "By country"
-        byCountryNavigationController.tabBarItem.image = UIImage(systemName: "globe")
+        byCountryNavigationController.tabBarItem.image = .byCountryTabBarIcon
         byCountryNavigationController.navigationBar.barTintColor = .white
         
-        viewControllers = [overviewNavigationController, byCountryNavigationController]
+        viewControllers = [summaryNavigationController, byCountryNavigationController]
     }
 
     private func style() {
