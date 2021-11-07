@@ -57,7 +57,7 @@ class ByCountryVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 55
-        tableView.register(CountryCell.self, forCellReuseIdentifier: "CountryCell")
+        tableView.register(CountryTableView.self, forCellReuseIdentifier: "CountryCell")
         tableView.sectionIndexColor = .black
     }
     
@@ -116,9 +116,9 @@ extension ByCountryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell") as! CountryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell") as! CountryTableView
         let country = sections[indexPath.section][indexPath.row]
-        cell.set(countryName: country.country)
+        cell.set(withCountry: country.country)
         
         return cell
     }

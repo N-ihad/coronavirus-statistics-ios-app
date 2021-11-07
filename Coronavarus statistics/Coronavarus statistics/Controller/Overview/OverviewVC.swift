@@ -20,47 +20,47 @@ class OverviewVC: UIViewController {
     private var overviewData: Global? {
         didSet {
             guard let overviewData = overviewData else { return }
-            newConfirmedInfoView.textLabel.text = String(overviewData.newConfirmed)
-            totalConfirmedInfoView.textLabel.text = String(overviewData.totalConfirmed)
-            newDeathsInfoView.textLabel.text = String(overviewData.newDeaths)
-            totalDeathsInfoView.textLabel.text = String(overviewData.totalDeaths)
-            newRecoveredInfoView.textLabel.text = String(overviewData.newRecovered)
-            totalRecoveredInfoView.textLabel.text = String(overviewData.totalRecovered)
+            newConfirmedInfoView.subtitleLabel.text = String(overviewData.newConfirmed)
+            totalConfirmedInfoView.subtitleLabel.text = String(overviewData.totalConfirmed)
+            newDeathsInfoView.subtitleLabel.text = String(overviewData.newDeaths)
+            totalDeathsInfoView.subtitleLabel.text = String(overviewData.totalDeaths)
+            newRecoveredInfoView.subtitleLabel.text = String(overviewData.newRecovered)
+            totalRecoveredInfoView.subtitleLabel.text = String(overviewData.totalRecovered)
         }
     }
     
     private let newConfirmedInfoView: InfoView = {
-        let newConfirmedView = InfoView(caption: "New confirmed")
+        let newConfirmedView = InfoView(title: "New confirmed")
         
         return newConfirmedView
     }()
     
     private let totalConfirmedInfoView: InfoView = {
-        let totalConfirmedView = InfoView(caption: "Total confirmed")
+        let totalConfirmedView = InfoView(title: "Total confirmed")
         
         return totalConfirmedView
     }()
     
     private let newDeathsInfoView: InfoView = {
-        let newDeathsInfoView = InfoView(caption: "New deaths")
+        let newDeathsInfoView = InfoView(title: "New deaths")
         
         return newDeathsInfoView
     }()
     
     private let totalDeathsInfoView: InfoView = {
-        let totalDeathsInfoView = InfoView(caption: "Total deaths")
+        let totalDeathsInfoView = InfoView(title: "Total deaths")
         
         return totalDeathsInfoView
     }()
     
     private let newRecoveredInfoView: InfoView = {
-        let newRecoveredInfoView = InfoView(caption: "New recovered")
+        let newRecoveredInfoView = InfoView(title: "New recovered")
         
         return newRecoveredInfoView
     }()
     
     private let totalRecoveredInfoView: InfoView = {
-        let totalRecoveredInfoView = InfoView(caption: "Total recovered")
+        let totalRecoveredInfoView = InfoView(title: "Total recovered")
         
         return totalRecoveredInfoView
     }()

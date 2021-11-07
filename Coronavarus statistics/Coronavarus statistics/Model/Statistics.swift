@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - Response
 struct StatisticsResponse: Codable {
+
     let message: String
     let global: Global
     let countries: [Country]
@@ -20,11 +20,15 @@ struct StatisticsResponse: Codable {
     }
 }
 
-// MARK: - Country
 struct Country: Codable {
+
     let country, countryCode, slug: String
     let newConfirmed, totalConfirmed, newDeaths, totalDeaths: Int
     let newRecovered, totalRecovered: Int
+
+    var titleFirstLetter: String {
+        String(country[country.startIndex]).uppercased()
+    }
 
     enum CodingKeys: String, CodingKey {
         case country = "Country"
@@ -39,14 +43,8 @@ struct Country: Codable {
     }
 }
 
-extension Country {
-    var titleFirstLetter: String {
-        return String(self.country[self.country.startIndex]).uppercased()
-    }
-}
-
-// MARK: - Global
 struct Global: Codable {
+
     let newConfirmed, totalConfirmed, newDeaths, totalDeaths: Int
     let newRecovered, totalRecovered: Int
 
@@ -59,5 +57,3 @@ struct Global: Codable {
         case totalRecovered = "TotalRecovered"
     }
 }
-
-
